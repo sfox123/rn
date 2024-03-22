@@ -18,32 +18,37 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Gas vs Electric</Text>
-      <Text>Gas Car</Text>
+      <Text style={styles.title}>Gas vs Electric</Text>
+      <Text style={styles.subTitle}>Gas Car</Text>
       <TextInput
+        style={styles.input}
         placeholder="Cost of 1 L of gas"
         onChangeText={(text) => setGasCost(text)}
       />
       <TextInput
+        style={styles.input}
         placeholder="Gas car mileage"
         onChangeText={(text) => setGasMileage(text)}
       />
-      <Text>Electric Car</Text>
+      <Text style={styles.subTitle}>Electric Car</Text>
       <TextInput
+        style={styles.input}
         placeholder="Cost of 1 kwH of electricity"
         onChangeText={(text) => setElectricityCost(text)}
       />
       <TextInput
+        style={styles.input}
         placeholder="Electric car mileage"
         onChangeText={(text) => setElectricMileage(text)}
       />
       <TextInput
+        style={styles.input}
         placeholder="Number of km driven per year"
         onChangeText={(text) => setKmDriven(text)}
       />
       <Button title="Calculate" onPress={calculate} />
-      <Text>Results</Text>
-      <Text>{results}</Text>
+      <Text style={styles.resultsTitle}>Results</Text>
+      <Text style={styles.results}>{results}</Text>
     </View>
   );
 }
@@ -54,5 +59,36 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    padding: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+  subTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    alignSelf: "flex-start",
+    marginTop: 20,
+  },
+  input: {
+    height: 40,
+    borderColor: "gray",
+    borderWidth: 1,
+    width: "100%",
+    paddingHorizontal: 10,
+    marginBottom: 10,
+  },
+  resultsTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    alignSelf: "flex-start",
+    marginTop: 20,
+  },
+  results: {
+    fontSize: 16,
+    color: "green",
+    marginTop: 10,
   },
 });
